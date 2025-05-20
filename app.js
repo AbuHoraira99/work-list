@@ -2,15 +2,26 @@ const AddBtn = document.querySelector('.btn');
 const InputBtn = document.querySelector('.input');
 const todoList = document.querySelector('.add-todo');
 
+
+function getTask(){
+  return JSON.parse(localStorage.getItem('tasks', JSON.stringify(tasks))) || [];
+}
+
+function saveTask(tasks){
+  localStorage.setItem('tasks', JSON.stringify(tasks))
+}
+
 AddBtn.addEventListener('click', ()=>{
   if(InputBtn.value.trim() !== '') {
     const taskText = InputBtn.value.trim();
 
-    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    // let tasks = JSON.parse(localStorage.getItem('
+    let tasks = getTask()
 
     tasks.push({ text: taskText, completed: false });
 
-    localStorage.setItem('tasks', JSON.stringify(tasks))
+    // localStorage.setItem('tasks', JSON.stringif
+    saveTask(tasks);
 
     runderTasks()
 
@@ -22,7 +33,8 @@ AddBtn.addEventListener('click', ()=>{
 function runderTasks(){
   todoList.innerHTML = '';
 
-  let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  // let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  let tasks = getTask()
 
   tasks.forEach((task, index) =>{
     const taskContainer = document.createElement('div');
@@ -65,17 +77,19 @@ todoList.addEventListener('click', (e)=>{
     const textDiv = e.target.closest('.task-item');
     const index = textDiv.getAttribute('data-index');
 
-    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    // let tasks = JSON.parse(localStorage.getItem('tasks
+    let tasks = getTask()
 
     if(action === "complete"){
-      tasks[index].completed = !tasks[index].completed
+      tasks[index].completed = !tasks[index].completed;
     }
 
     if(action === 'delete'){
-      tasks.splice(index, 1)
+      tasks.splice(index, 1);
     }
 
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    // localStorage.setItem('tasks', JSON.stringify(tasks));
+    saveTask(tasks)
     runderTasks();
   }
 })
