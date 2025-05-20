@@ -4,11 +4,11 @@ const todoList = document.querySelector('.add-todo');
 
 
 function getTask(){
-  return JSON.parse(localStorage.getItem('tasks', JSON.stringify(tasks))) || [];
+  return JSON.parse(localStorage.getItem('tasks')) || [];
 }
 
 function saveTask(tasks){
-  localStorage.setItem('tasks', JSON.stringify(tasks))
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 AddBtn.addEventListener('click', ()=>{
