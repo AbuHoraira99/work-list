@@ -1,0 +1,71 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #1A1F71, #333333);
+  color: #fff;
+}
+.container{
+  width: 700px;
+  min-height: 300px;
+  background-color: rgb(131, 120, 120);
+  color: #fff;
+  margin: 150px auto;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+h2{
+  text-align: center;
+  padding: 10px 0 20px 0;
+  font-size: 40px;
+}
+.inputBox{
+  display: flex;
+  justify-content: space-between;
+}
+.input{
+  height: 45px;
+  width: 590px;
+  margin-left: 20px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+}
+.btn{
+  height: 45px;
+  width: 60px;
+  margin-right: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: lightgreen;
+  cursor: pointer;
+}
+.add-todo{
+  display: flex;
+  /* justify-content: space-between; */
+  flex-direction: column;
+  gap: 10px;
+}
+.task-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-item p{
+  margin-left: 20px;
+  margin-top: 15px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.task-item .img-edite{
+  filter: invert(1);
+  width: 20px;
+  margin-right: 20px;
+  margin-top: 15px;
+  cursor: pointer;
+}
