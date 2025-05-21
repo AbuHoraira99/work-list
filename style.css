@@ -71,8 +71,31 @@ h2{
   cursor: pointer;
 }
 
-@media only screen and (min-width: 750px){
-  body{
-    background-color: red !important;
-  }
+@media only screen and (max-width: 750px){
+ .container{
+  height: 700px;
+ }
+
+ h2{
+  font-size: 85px;
+ }
+
+ .input{
+  height: 75px;
+  width: 590px;
+  font-size: 40px;
+}
+
+.btn{
+  height: 75px;
+  font-size: 30px;
+}
+
+.task-item p{
+  font-size: 40px;
+}
+
+.task-item .img-edite{
+  width: 30px;
+}
 }
